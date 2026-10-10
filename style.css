@@ -194,10 +194,7 @@ html, body {
   width: 96px;
   height: 96px;
   z-index: 3;
-  color: #a8844c;
-  border-radius: 50%;
-  background: var(--bg-inner);
-  box-shadow: 0 2px 10px rgba(120, 95, 55, 0.18);
+  color: var(--text);
 }
 
 .orbit-badge svg {
