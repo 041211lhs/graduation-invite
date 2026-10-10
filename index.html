@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>이현서 졸업식 초대장</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- 1. 커버 -->
+  <section class="step active show" data-step="cover">
+    <div class="step-body">
+      <div class="cover-headline"><span class="line1">FROM HERE,</span><span class="line2">ONWARD</span></div>
+      <div class="photo-frame" id="cover-photo-frame"></div>
+      <div class="cover-caption">In the name of graduation,<br>a new chapter begins.</div>
+    </div>
+    <button class="btn btn-primary" data-next="intro">초대장 보기</button>
+    <div class="link-copy">
+      <button id="copy-link-btn">초대장 링크 복사하기</button>
+    </div>
+  </section>
+
+  <!-- 2. 인사말 + 날짜 -->
+  <section class="step" data-step="intro">
+    <button class="back-btn" data-back>← 이전</button>
+    <div class="step-body">
+      <div class="eyebrow">Invitation</div>
+      <div class="title serif">To. 당신에게</div>
+      <p class="greeting-text serif">그동안 함께해주신 시간에 감사드리며,<br>저의 졸업식에 소중한 당신을 초대합니다.</p>
+
+      <div class="divider"></div>
+
+      <div class="title small" id="ceremony-label"></div>
+      <div class="dday" id="dday-text">D-</div>
+      <div class="calendar">
+        <div class="calendar-month">2027년 2월</div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+      </div>
+    </div>
+    <button class="btn btn-primary" data-next="letter">다음</button>
+  </section>
+
+  <!-- 3. 편지 + 참석여부 -->
+  <section class="step" data-step="letter">
+    <button class="back-btn" data-back>← 이전</button>
+    <div class="step-body">
+      <div class="eyebrow">Letter</div>
+      <div class="title serif">당신이 기억하는 대학생<br>이현서는 어떤 사람이었는지<br>적어주세요</div>
+      <div class="field">
+        <label for="input-name">이름</label>
+        <input type="text" id="input-name" maxlength="30" placeholder="이름을 입력해주세요">
+      </div>
+      <div class="field">
+        <label for="input-letter">편지</label>
+        <textarea id="input-letter" maxlength="1000" placeholder="자유롭게 적어주세요"></textarea>
+        <div class="char-count"><span id="char-count">0</span> / 1000</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <label id="attendance-question"></label>
+        <div class="btn-row">
+          <button class="btn btn-toggle" id="attend-yes-btn" data-value="예">네</button>
+          <button class="btn btn-toggle" id="attend-no-btn" data-value="아니요">아니요</button>
+        </div>
+      </div>
+
+      <div class="error-text" id="letter-error"></div>
+    </div>
+    <button class="btn btn-primary" id="letter-submit-btn">확인</button>
+  </section>
+
+  <!-- 4. 참석 옵션 (참석=예일 때만) -->
+  <section class="step" data-step="options">
+    <button class="back-btn" data-back>← 이전</button>
+    <div class="step-body">
+      <div class="eyebrow">RSVP</div>
+      <div class="title">어떤 방식으로 함께할까요?</div>
+      <button class="btn btn-soft option-btn" data-option="같이 사진만 찍기">같이 사진만 찍기</button>
+      <button class="btn btn-soft option-btn" data-option="같이 사진찍고 밥먹기">같이 사진찍고 밥먹기</button>
+      <button class="btn btn-soft option-btn" data-option="같이 밥만 먹기">같이 밥만 먹기</button>
+      <p class="option-desc">현서가 점심 식사를 준비할 예정이에요 (13:00~14:00)</p>
+      <div class="error-text" id="options-error"></div>
+    </div>
+  </section>
+
+  <!-- 5. 종료: 감사 인사 + 갤러리 + 지도 -->
+  <section class="step" data-step="end">
+    <div class="step-body">
+      <div class="end-icon">🎓</div>
+      <div class="title serif">감사합니다,<br>덕분에 더 행복한 대학 생활을<br>즐길 수 있었어요</div>
+
+      <div class="divider"></div>
+
+      <div class="eyebrow">Memories</div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+
+      <div class="divider"></div>
+
+      <div class="eyebrow">Location</div>
+      <div class="place-name" id="place-name"></div>
+      <div class="place-address" id="place-address"></div>
+      <div class="map-box" id="map"></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

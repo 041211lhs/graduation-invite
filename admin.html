@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>응답 모아보기</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div id="gate" class="gate">
+  <div class="gate-box">
+    <div class="gate-title">응답 모아보기</div>
+    <input type="password" id="gate-password" placeholder="비밀번호">
+    <button id="gate-submit" class="btn btn-primary">확인</button>
+    <div class="gate-error" id="gate-error"></div>
+  </div>
+</div>
+
+<div id="dashboard" class="dashboard" style="display:none;">
+  <div class="dash-header">
+    <div class="dash-title">응답 모아보기</div>
+    <button id="export-btn" class="btn btn-outline btn-small">CSV로 내보내기</button>
+  </div>
+
+  <div class="summary-grid" id="summary-grid"></div>
+
+  <div class="list" id="response-list"></div>
+</div>
+
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
