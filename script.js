@@ -283,12 +283,19 @@
     });
   }
 
+  function showSending(on) {
+    document.getElementById('sending').classList.toggle('on', on);
+  }
+
   function sendToSheet(payload) {
+    showSending(true);
     return fetch(CONFIG.APPS_SCRIPT_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(payload)
-    }).then(function (r) { return r.json(); });
+    })
+      .then(function (r) { return r.json(); })
+      .finally(function () { showSending(false); });
   }
 
   if (!Promise.prototype.finally) {
